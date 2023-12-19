@@ -1,4 +1,4 @@
-use actix_seaorm_todo::config::Config;
+use actix_seaorm_todo::{config::Config, routes::todo_routes::hello};
 use actix_web::{get, middleware::Logger, App, HttpResponse, HttpServer, Responder};
 
 #[actix_web::main]
@@ -11,9 +11,4 @@ async fn main() -> std::io::Result<()> {
         .bind((config.host, config.port))?
         .run()
         .await
-}
-
-#[get("/")]
-async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello world!")
 }
