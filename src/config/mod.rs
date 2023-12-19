@@ -53,7 +53,7 @@ impl Config {
                 }),
             };
 
-            file.write_all(serde_json::to_string(&config).unwrap().as_bytes())
+            file.write_all(serde_json::to_string_pretty(&config).unwrap().as_bytes())
                 .expect("Could not write to config.json");
 
             panic!("Could not find config.json so i created one :)");
