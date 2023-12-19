@@ -1,3 +1,5 @@
+#![allow(clippy::new_without_default)]
+
 use serde::{Deserialize, Serialize};
 use std::{fs::File, io::Write, path::Path};
 
