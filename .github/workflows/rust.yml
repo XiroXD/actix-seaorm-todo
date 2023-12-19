@@ -23,6 +23,10 @@ jobs:
         with:
           rust-version: ${{ matrix.rust }}
           components: rustfmt, clippy
+      - name: Install cargo-audit
+        run: cargo install cargo-audit
+      - name: Audit
+        run: cargo audit
       - name: Build
         run: cargo build --verbose
       - name: Run tests
