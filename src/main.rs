@@ -1,5 +1,5 @@
 use actix_seaorm_todo::{config::Config, routes::todo_routes::hello};
-use actix_web::{get, middleware::Logger, App, HttpResponse, HttpServer, Responder};
+use actix_web::{middleware::Logger, App, HttpServer};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
